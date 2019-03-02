@@ -1,5 +1,5 @@
 # phiddler
-Generating traditional celtic tunes with LSTM neural nets
+Generating traditional celtic tunes with LSTM neural nets.
 
 This project is mostly cloned from Hannah Shaw's wonderful tutorial on generative poetry - https://vivshaw.github.io/blog/electric-pentameter/
 
