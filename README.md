@@ -8,7 +8,7 @@ https://github.com/adactio/TheSession-data
 
 The files:
 
-slicetunes.py extracts just the abc-formatted notes (and in this case, just from Reels to avoid potential Cronenberg-style odd-meter monstrosities.
+slicetunes.py extracts just the abc-formatted notes (and in this case, just from Reels to avoid potential Cronenberged odd-meter monstrosities).
 
 robotfiddler.py prepares the data and trains the neural net
 
