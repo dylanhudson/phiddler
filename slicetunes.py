@@ -16,10 +16,12 @@ parsed_json = json.load(json_data)
 notes = ""
 
 for tune in parsed_json:
-    if tune['type'] == "reel":
-        notes += " " + tune['abc']
+    #if tune['type'] == "reel":
+    #    if tune['mode'] == "Dmajor":
+    #       notes += " " + tune['abc']
+    notes += " " + tune['name']
 
-textfile = open("rawnotes.txt", "w")
+textfile = open("tune_names.txt", "w")
 textfile.write(notes)
 json_data.close()
 

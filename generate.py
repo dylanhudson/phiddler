@@ -3,18 +3,16 @@
 """
 Created on Fri Mar  1 19:43:28 2019
 
-@author: dylan
 """
 
 import numpy as np
-from keras.models import model_from_yaml
+from keras.models import model_from_json
 from random import randint
 
 
-with open("rawnotes.txt") as corpus_file:
+with open("rawnotesDmaj-new.txt") as corpus_file:
     corpus = corpus_file.read()
-    
-print("loaded a corpus of {0} chars.".format(len(corpus)))
+
 
 chars = sorted(list(set(corpus)))
 num_chars = len(chars)
@@ -25,11 +23,11 @@ print("Corpus contains {0} unique chars.".format(num_chars))
 bar_length = 75
 corpus_length = len(corpus)
 
-with open("model.yaml") as model_file:
+with open("modelDmaj-new.json") as model_file:
     architecture = model_file.read()
-    
-model = model_from_yaml(architecture)
-model.load_weights("weights.hdf5")
+
+model = model_from_json(architecture)
+model.load_weights("weightsDmaj-new-10-0.929.hdf5")
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 seed = randint(0, corpus_length - bar_length)
@@ -37,17 +35,16 @@ seed_bar = corpus[seed:seed + bar_length]
 X = np.zeros((1, bar_length, num_chars), dtype=np.bool)
 for i, c in enumerate(seed_bar):
     X[0, i, encoding[c]] = 1
-    
+
 composed_tune = ""
 for i in range(400):
     prediction = np.argmax(model.predict(X, verbose=0))
-    
+
     composed_tune += decoding[prediction]
-    
+
     activations = np.zeros((1, 1, num_chars), dtype=np.bool)
     activations[0, 0, prediction] = 1
     X = np.concatenate((X[:, 1:, :], activations), axis=1)
-    
 
-print(composed_tune) 
-    
+
+print(composed_tune)
