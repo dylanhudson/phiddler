@@ -14,11 +14,10 @@ The files:
 
 slicetunes.py extracts just the abc-formatted notes (and in this case, just from Reels to avoid potential Cronenberged odd-meter monstrosities).
 
-robotfiddler.py prepares the data and trains the neural net
+build_models.py prepares the data and trains the neural net
 
 generate.py seeds the model and produces several bars of raw abcjs formatted notes. 
 
-#TODO build webapp to parse and play the frankentunes
 
 
 
