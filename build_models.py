@@ -48,8 +48,8 @@ for i, bar in enumerate(x_data):
         X[i, n, encoded_char] = 1
     y[i, y_data[i]] = 1
 
-print("y Dimension: {0} # Sentences {1} Characters {2}".format(y.shape, num_bars, len(chars)))
-print("X Dimension: {0} # Sentences {1}".format(X.shape, bar_length))
+print("y Dimension: {0} # Bars {1} Characters {2}".format(y.shape, num_bars, len(chars)))
+print("X Dimension: {0} # Bars {1}".format(X.shape, bar_length))
 
 model = Sequential()
 model.add(LSTM(256, input_shape=(bar_length, num_chars)))
