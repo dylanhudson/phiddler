@@ -7,7 +7,7 @@ The orginal dataset comes from Jeremy's great work at The Session -
 https://github.com/adactio/TheSession-data
 
 
-Training took about 45 minutes/epoch on an AWS p2.xlarge GPU instance, using a TensorFlow/CUDA backend.
+Training took about 45 minutes/epoch on an AWS ec2 p2.xlarge GPU Ubuntu deep learning instance , using a TensorFlow/CUDA backend.
 
 
 The files:
